@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "printables-cli"
+version = "0.1.0"
+description = "Unofficial command line client for Printables: list, download, publish and update your models"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["printables", "3d-printing", "cli", "playwright"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.12,<3.14"
+dependencies = ["playwright>=1.48", "httpx>=0.27"]
+
+[project.urls]
+Homepage = "https://github.com/pgm095/printables-cli"
+Issues = "https://github.com/pgm095/printables-cli/issues"
+
+[project.scripts]
+printables = "printables_cli.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["printables_cli"]
